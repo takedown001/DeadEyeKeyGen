@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/purple_700">
+
+
+    <com.google.android.ads.nativetemplates.TemplateView
+        android:id="@+id/my_template"
+        android:layout_width="wrap_content"
+        android:layout_height="116dp"
+        android:layout_above="@+id/counter"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="20dp"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintHorizontal_bias="0.0"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent"
+        app:gnt_template_type="@layout/gnt_small_template_view">
+
+    </com.google.android.ads.nativetemplates.TemplateView>
+
+    <TextView
+        android:id="@+id/counter"
+        android:layout_width="245dp"
+        android:layout_height="55dp"
+        android:layout_above="@+id/topadView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="78dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="441dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="center"
+        android:text="300"
+        android:textColor="@color/white"
+        android:textSize="25dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/username"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/topadView"
+        android:layout_alignTop="@+id/counter"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="297dp"
+        android:background="@drawable/blankfill"
+        android:fontFamily="@font/montserrat"
+        android:hint="Your Key Will Be Here"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/topadView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-9545053006738127/2666957256" />
+
+    <ImageView
+        android:id="@+id/tg"
+        android:layout_width="68dp"
+        android:layout_height="63dp"
+        android:layout_above="@+id/topadView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="167dp"
+        android:layout_marginEnd="176dp"
+        android:layout_marginBottom="222dp"
+        android:src="@drawable/tg" />
+</RelativeLayout>

@@ -1,0 +1,1 @@
+"C:\Users\wwwsh\AppData\Local\Android\Sdk\ndk\21.1.6352462\ndk-build.cmd" NDK_PROJECT_PATH=%~dp0..\app\src\main\cpp\ APP_BUILD_SCRIPT=%~dp0..\app\src\main\cpp\Android.mk NDK_APPLICATION_MK=%~dp0..\app\src\main\cpp\Application.mk NDK_OUT=obj NDK_LIBS_OUT=libs

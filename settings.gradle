@@ -1,0 +1,3 @@
+rootProject.name = "DeadEye KeyGen"
+include ':app'
+include ':nativetemplates'
