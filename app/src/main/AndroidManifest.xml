@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.gcc.deadeyekeygen">
-<uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
-
+    package="com.game.sploitkeygen">
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:name=".MyApplication"
@@ -21,9 +19,9 @@
     </intent-filter>
 </activity>
         <activity android:name=".AdsActivity" android:hardwareAccelerated="true"/>
+        <activity android:name=".AppUpdaterActivity" android:hardwareAccelerated="true"/>
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-9545053006738127~5159095511"/>
+            android:value="ca-app-pub-2563787493982341~5522292675"/>
     </application>
-
 </manifest>

@@ -6,30 +6,25 @@
 #include "Security/enc.h"
 
 
-
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_gcc_deadeyekeygen_AdsActivity_00024GetKey_Here(JNIEnv *env, jobject thiz) {
-    return env->NewStringUTF(OBS("https://gcc-org.com/DeadEyE/keyGen.php"));
-}extern "C"
-JNIEXPORT jstring JNICALL
-Java_com_gcc_deadeyekeygen_AESUtils_00024DarKnight_AESKey(JNIEnv *env, jclass thiz) {
-    return env->NewStringUTF(OBS("tAeKpEcDe6410111"));
+Java_com_game_sploitkeygen_HomeActivity_tg(JNIEnv *env, jclass thiz) {
+    return env->NewStringUTF(OBS("https://t.me/DeadEye_TG"));
+
 }
 extern "C"
-JNIEXPORT int JNICALL
-Java_com_gcc_deadeyekeygen_AdsActivity_getduration(JNIEnv *env, jclass thiz) {
-    jint i = 31000;
+JNIEXPORT jstring JNICALL
+Java_com_game_sploitkeygen_AdsActivity_KeyGen(JNIEnv *env, jobject thiz) {
+    return env->NewStringUTF(OBS("https://gcc-org.com/project/Mod/freekey.php"));
+}
+extern "C"
+JNIEXPORT jint JNICALL
+Java_com_game_sploitkeygen_AdsActivity_getduration(JNIEnv *env, jclass clazz) {
+    jint i = 10000;
     return i;
 }
-
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_memory_xploiter_ESPView_DeadEye(JNIEnv *env, jobject thiz) {
-    return env->NewStringUTF(OBS("DeadEye"));
-}
-extern "C"
-JNIEXPORT jstring JNICALL
-Java_com_gcc_deadeyekeygen_HomeActivity_tg(JNIEnv *env, jclass thiz) {
-    return env->NewStringUTF(OBS("https://t.me/DeadEye_TG"));
+Java_com_game_sploitkeygen_HomeActivity_Donate(JNIEnv *env, jclass clazz) {
+    return env->NewStringUTF(OBS("https://shop.gamesploit.com/product/bgmi-internal-esp/"));
 }

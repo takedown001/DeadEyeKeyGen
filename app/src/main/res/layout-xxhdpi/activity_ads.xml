@@ -8,86 +8,137 @@
     android:layout_height="match_parent"
     android:background="@color/purple_700">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="150dp"
+        android:background="@color/purple_700"
+        app:cardBackgroundColor="#2F3844"
+        app:cardCornerRadius="30dp">
 
-    <com.google.android.ads.nativetemplates.TemplateView
-        android:id="@+id/my_template"
-        android:layout_width="wrap_content"
-        android:layout_height="116dp"
-        android:layout_above="@+id/counter"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="56dp"
+                android:background="@drawable/blankfill"
+                android:fontFamily="@font/montserrat"
+                android:hint="Your Key Will Be Here"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+
+            <TextView
+                android:id="@+id/counter"
+                android:layout_width="75dp"
+                android:layout_height="46dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="93dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="107dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:text="300"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/donate"
+                android:layout_width="112dp"
+                android:layout_height="90dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="127dp"
+                android:layout_marginTop="144dp"
+                android:layout_marginEnd="132dp"
+                android:layout_marginBottom="66dp"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="donate.json"
+                app:lottie_loop="true" />
+
+            <TextView
+
+                android:layout_width="75dp"
+                android:layout_height="46dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:text="Free From Ads At Just $1 (7 Days)"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/Support"
+        android:layout_width="75dp"
+        android:layout_height="46dp"
+        android:layout_above="@+id/topadView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="59dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="center"
+        android:text="Stay Updated On Telegram"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/telegram"
+        android:layout_width="97dp"
+        android:layout_height="62dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="20dp"
-        ads:layout_constraintEnd_toEndOf="parent"
-        ads:layout_constraintHorizontal_bias="0.0"
-        ads:layout_constraintStart_toStartOf="parent"
-        ads:layout_constraintTop_toTopOf="parent"
-        app:gnt_template_type="@layout/gnt_small_template_view">
-
-    </com.google.android.ads.nativetemplates.TemplateView>
-
-    <TextView
-        android:id="@+id/counter"
-        android:layout_width="224dp"
-        android:layout_height="55dp"
-        android:layout_above="@+id/topadView"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_gravity="center"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="95dp"
-        android:layout_marginBottom="435dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:gravity="center"
-        android:text="300"
-        android:textColor="@color/white"
-        android:textSize="25dp" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/topadView"
-        android:layout_alignTop="@+id/counter"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_gravity="center"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="107dp"
-        android:layout_marginEnd="65dp"
-        android:layout_marginBottom="291dp"
-        android:background="@drawable/blankfill"
-        android:fontFamily="@font/montserrat"
-        android:hint="Your Key Will Be Here"
-        android:textAlignment="center"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:visibility="visible" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="574dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="95dp"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="telegram.json"
+        app:lottie_loop="true" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/topadView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-9545053006738127/2666957256" />
-
-    <ImageView
-        android:id="@+id/tg"
-        android:layout_width="68dp"
-        android:layout_height="63dp"
-        android:layout_above="@+id/topadView"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
         android:layout_gravity="center"
-        android:layout_marginStart="167dp"
-        android:layout_marginEnd="176dp"
-        android:layout_marginBottom="222dp"
-        android:src="@drawable/tg" />
+        android:layout_marginBottom="-1dp"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-2563787493982341/2353844485" />
+
 </RelativeLayout>

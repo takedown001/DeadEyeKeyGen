@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "132739356461",
+    "project_id": "deadeye-key",
+    "storage_bucket": "deadeye-key.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132739356461:android:2bd5565d19c99f297f65a4",
+        "android_client_info": {
+          "package_name": "com.gcc.deadeyekeygen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132739356461-gnc2qffsjbl7a5govs7d9h7j6lhf5d18.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAU3ncpvrzC1UGWXZlAubM241NJNU1mavM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132739356461-gnc2qffsjbl7a5govs7d9h7j6lhf5d18.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-9545053006738127~5159095511"
+    }
+  ],
+  "configuration_version": "1"
+}

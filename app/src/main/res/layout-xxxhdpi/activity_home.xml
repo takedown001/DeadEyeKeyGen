@@ -11,7 +11,7 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="757dp"
+        android:layout_height="635dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="0dp"
@@ -19,22 +19,17 @@
         android:foregroundGravity="center"
         android:overScrollMode="never" />
 
-    <com.google.android.ads.nativetemplates.TemplateView
-        android:id="@+id/homebottam"
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/bottom"
         android:layout_width="match_parent"
-        android:layout_height="128dp"
+        android:layout_height="97dp"
         android:layout_below="@+id/viewPager"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
-        ads:layout_constraintEnd_toEndOf="parent"
-        ads:layout_constraintHorizontal_bias="0.0"
-        ads:layout_constraintStart_toStartOf="parent"
-        ads:layout_constraintTop_toTopOf="parent"
-        app:gnt_template_type="@layout/gnt_small_template_view" />
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-2563787493982341/2572216770" />
 
 </RelativeLayout>
