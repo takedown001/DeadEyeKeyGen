@@ -20,7 +20,7 @@ Java_com_game_sploitkeygen_AdsActivity_KeyGen(JNIEnv *env, jobject thiz) {
 extern "C"
 JNIEXPORT jint JNICALL
 Java_com_game_sploitkeygen_AdsActivity_getduration(JNIEnv *env, jclass clazz) {
-    jint i = 10000;
+    jint i = 5000;
     return i;
 }
 extern "C"

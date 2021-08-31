@@ -17,8 +17,8 @@ android {
         applicationId "com.game.sploitkeygen"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 3
-        versionName "1.7"
+        versionCode 4
+        versionName "1.8"
         manifestPlaceholders = [
                 onesignal_app_id: 'a0823f31-dac3-4eb0-b513-fbebde4e3eb5',
                 // Project number pulled from dashboard, local value is ignored.

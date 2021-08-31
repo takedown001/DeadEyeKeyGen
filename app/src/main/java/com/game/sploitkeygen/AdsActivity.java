@@ -2,6 +2,7 @@
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -12,6 +13,7 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -54,9 +56,9 @@ import static com.game.sploitkeygen.config.TAG_KEY;
     private TextView couter;
     private final String TAG = "MainActivity";
     AdRequest adRequest;
-    private TextInputEditText keyshow ;
+    private TextView keyshow ;
     private int game;
-    private LottieAnimationView tg,Donate;
+    private LottieAnimationView tg,Donate,clipboard;
      private InterstitialAd mInterstitialAd;
      public AdsActivity() {
      }
@@ -69,6 +71,7 @@ import static com.game.sploitkeygen.config.TAG_KEY;
         keyshow = findViewById(R.id.username);
         AdView adView = new AdView(this);
         adView = findViewById(R.id.topadView);
+        clipboard = findViewById(R.id.clipboard);
         couter = findViewById(R.id.counter);
         adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
@@ -95,13 +98,19 @@ import static com.game.sploitkeygen.config.TAG_KEY;
                getkey();
                 }
         }.start();
-
+        clipboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setClipboard(AdsActivity.this,keyshow.getText().toString());
+                Toast.makeText(AdsActivity.this, "Key Copied", Toast.LENGTH_SHORT).show();
+            }
+        });
         tg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                            Intent i = new Intent(Intent.ACTION_VIEW);
-                            i.setData(Uri.parse(HomeActivity.tg()));
-                            startActivity(i);
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(HomeActivity.tg()));
+                startActivity(i);
             }
         });
         Donate.setOnClickListener(new View.OnClickListener() {
@@ -133,7 +142,16 @@ import static com.game.sploitkeygen.config.TAG_KEY;
                 }
             });
 }
-
+     private void setClipboard(Context context, String text) {
+         if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) {
+             android.text.ClipboardManager clipboard = (android.text.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+             clipboard.setText(text);
+         } else {
+             android.content.ClipboardManager clipboard = (android.content.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+             android.content.ClipData clip = android.content.ClipData.newPlainText("Copied Text", text);
+             clipboard.setPrimaryClip(clip);
+         }
+     }
      private void getkey() {
          final String  deviceid = Helper.getUniqueId(this);
 
@@ -206,12 +224,14 @@ import static com.game.sploitkeygen.config.TAG_KEY;
                                              mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
                                                  @Override
                                                  public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+                                                     clipboard.setVisibility(View.VISIBLE);
                                                      couter.setTextSize(15);
                                                      couter.setText("Your Key is Below");
                                                      keyshow.setText(key);;
                                                  }
                                              });
                                          } else {
+                                             clipboard.setVisibility(View.VISIBLE);
                                              couter.setTextSize(15);
                                              couter.setText("Your Key is Below");
                                              keyshow.setText(key);;

@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:name=".MyApplication"
+        android:hardwareAccelerated="true"
         >
 
 <activity android:name=".HomeActivity" android:hardwareAccelerated="true">
