@@ -9,7 +9,7 @@ public class config {
     //official
     public static final String TAG_STORE = "store";
 
-    public static final String Main = "https://gamesploit.com/project/Mod/";
+    public static final String Main = "https://gamesploit.com/project/KeyGen/";
 
     //auth
     public static final String TAG_DEVICEID = "2";

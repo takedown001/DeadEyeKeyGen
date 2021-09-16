@@ -13,6 +13,7 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -58,7 +59,8 @@ import static com.game.sploitkeygen.config.TAG_KEY;
     AdRequest adRequest;
     private TextView keyshow ;
     private int game;
-    private LottieAnimationView tg,Donate,clipboard;
+    private Button Donate;
+    private ImageView tg;
      private InterstitialAd mInterstitialAd;
      public AdsActivity() {
      }
@@ -71,7 +73,6 @@ import static com.game.sploitkeygen.config.TAG_KEY;
         keyshow = findViewById(R.id.username);
         AdView adView = new AdView(this);
         adView = findViewById(R.id.topadView);
-        clipboard = findViewById(R.id.clipboard);
         couter = findViewById(R.id.counter);
         adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
@@ -98,13 +99,6 @@ import static com.game.sploitkeygen.config.TAG_KEY;
                getkey();
                 }
         }.start();
-        clipboard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setClipboard(AdsActivity.this,keyshow.getText().toString());
-                Toast.makeText(AdsActivity.this, "Key Copied", Toast.LENGTH_SHORT).show();
-            }
-        });
         tg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -161,7 +155,7 @@ import static com.game.sploitkeygen.config.TAG_KEY;
              protected void onPreExecute() {
                  super.onPreExecute();
                  dialog.setCancelable(false);
-                 dialog.setMessage("Authenticating");
+                 dialog.setMessage("Loading Key");
                  if(!AdsActivity.this.isFinishing())
                  {
                      dialog.show();
@@ -224,14 +218,13 @@ import static com.game.sploitkeygen.config.TAG_KEY;
                                              mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
                                                  @Override
                                                  public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-                                                     clipboard.setVisibility(View.VISIBLE);
+
                                                      couter.setTextSize(15);
                                                      couter.setText("Your Key is Below");
                                                      keyshow.setText(key);;
                                                  }
                                              });
                                          } else {
-                                             clipboard.setVisibility(View.VISIBLE);
                                              couter.setTextSize(15);
                                              couter.setText("Your Key is Below");
                                              keyshow.setText(key);;
