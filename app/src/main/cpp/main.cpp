@@ -15,12 +15,12 @@ Java_com_game_sploitkeygen_HomeActivity_tg(JNIEnv *env, jclass thiz) {
 extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_game_sploitkeygen_AdsActivity_KeyGen(JNIEnv *env, jobject thiz) {
-    return env->NewStringUTF(OBS("https://gcc-org.com/project/Mod/freekey.php"));
+    return env->NewStringUTF(OBS("https://gamesploit.com/project/KeyGen/freekey.php"));
 }
 extern "C"
 JNIEXPORT jint JNICALL
 Java_com_game_sploitkeygen_AdsActivity_getduration(JNIEnv *env, jclass clazz) {
-    jint i = 10000;
+    jint i = 20000;
     return i;
 }
 extern "C"

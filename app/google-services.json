@@ -1,39 +1,48 @@
 {
   "project_info": {
-    "project_number": "132739356461",
-    "project_id": "deadeye-key",
-    "storage_bucket": "deadeye-key.appspot.com"
+    "project_number": "873485852345",
+    "firebase_url": "https://keygen-43ebb-default-rtdb.firebaseio.com",
+    "project_id": "keygen-43ebb",
+    "storage_bucket": "keygen-43ebb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:132739356461:android:2bd5565d19c99f297f65a4",
+        "mobilesdk_app_id": "1:873485852345:android:81b53846862d8a2b640568",
         "android_client_info": {
-          "package_name": "com.gcc.deadeyekeygen"
+          "package_name": "com.game.sploitkeygen"
         }
       },
       "oauth_client": [
         {
-          "client_id": "132739356461-gnc2qffsjbl7a5govs7d9h7j6lhf5d18.apps.googleusercontent.com",
+          "client_id": "873485852345-bmbabd6bv1agfn7gispta7t1683uq1d0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.game.sploitkeygen",
+            "certificate_hash": "08e9e08fa2028ab5b05ae43007c7574f5ea16399"
+          }
+        },
+        {
+          "client_id": "873485852345-c3rpnikumausp5semee1aoqf3aoh10r3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAU3ncpvrzC1UGWXZlAubM241NJNU1mavM"
+          "current_key": "AIzaSyCTpo2eKpQM7WVknJ76SYRTsVD_5nTwCsM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "132739356461-gnc2qffsjbl7a5govs7d9h7j6lhf5d18.apps.googleusercontent.com",
+              "client_id": "873485852345-c3rpnikumausp5semee1aoqf3aoh10r3.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
         }
       },
-      "admob_app_id": "ca-app-pub-9545053006738127~5159095511"
+      "admob_app_id": "ca-app-pub-2563787493982341~5522292675"
     }
   ],
   "configuration_version": "1"

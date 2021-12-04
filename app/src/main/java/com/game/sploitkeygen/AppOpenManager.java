@@ -24,7 +24,8 @@ public class AppOpenManager implements LifecycleObserver,Application.ActivityLif
     private static boolean isShowingAd = false;
 
     private static final String LOG_TAG = "AppOpenManager";
-    private static final String AD_UNIT_ID = "ca-app-pub-2563787493982341/6009377837";
+  private static final String AD_UNIT_ID = "ca-app-pub-2563787493982341/8674652702";
+//    private static final String AD_UNIT_ID = "ca-app-pub-3940256099942544/3419835294"; //test
     private AppOpenAd appOpenAd = null;
     private Activity currentActivity;
     private AppOpenAd.AppOpenAdLoadCallback loadCallback;

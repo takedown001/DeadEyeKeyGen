@@ -8,12 +8,17 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AdSize;
 import com.game.sploitkeygen.Adapter.StoreAdapter;
 
 import org.json.JSONArray;
@@ -23,8 +28,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import com.game.sploitkeygen.data.Model;
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.LoadAdError;
 
 import burakustun.com.lottieprogressdialog.LottieDialogFragment;
 
@@ -56,25 +63,25 @@ public class HomeActivity extends AppCompatActivity {
     private String newversion ;
     JSONObject json = new JSONObject();
     Integer[] colors = null;
-    AdRequest adRequest;
     String data ;
+    AdRequest adRequest;
     final DialogFragment lottieDialog = new LottieDialogFragment().newInstance("loadingdone.json",true);
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
     public static native String tg();
     public static native String Donate();
-
+    private AdView AdmobView;
+    private com.facebook.ads.AdView fb;
+    private LinearLayout banner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         offersList = new ArrayList<>();
-
         Model = new ArrayList<>();
-        AdView adView = new AdView(this);
-        adapter = new StoreAdapter(Model, this);
-        adView = findViewById(R.id.bottom);
+        AdmobView = new AdView(this);
         adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
+        banner = findViewById(R.id.bottombanner);
+        adapter = new StoreAdapter(Model, this);
         new OneLoadAllProducts().execute();
         viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(adapter);
@@ -119,10 +126,57 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+     //   showadmob();
     }
 
 
+//    private void showFbAd(){
+//        fb = new com.facebook.ads.AdView(this,"IMG_16_9_APP_INSTALL#968761180358361_1013304472570698", AdSize.BANNER_HEIGHT_50);
+//        banner.addView(fb);
+//        fb.loadAd();
+//
+//    }
 
+    private void showadmob() {
+
+        AdmobView.setAdUnitId("ca-app-pub-2563787493982341/4728518891");
+        AdmobView.setAdSize(com.google.android.gms.ads.AdSize.SMART_BANNER);
+        AdmobView.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                super.onAdClosed();
+            }
+
+            @Override
+            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                super.onAdFailedToLoad(loadAdError);
+             //   showFbAd();
+            }
+
+            @Override
+            public void onAdOpened() {
+                super.onAdOpened();
+            }
+
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+            }
+
+            @Override
+            public void onAdClicked() {
+                super.onAdClicked();
+            }
+
+            @Override
+            public void onAdImpression() {
+                super.onAdImpression();
+            }
+        });
+        AdmobView.loadAd(adRequest);
+        banner.addView(AdmobView);
+
+    }
 
 
     class OneLoadAllProducts extends AsyncTask<String, String, String> {
@@ -180,7 +234,7 @@ public class HomeActivity extends AppCompatActivity {
                     return null;
                 } else {
                     json = new JSONObject(decData);
-                    Log.d("All jsonarray: ", String.valueOf(json));
+             //       Log.d("All jsonarray: ", String.valueOf(json));
                     success = json.getInt(TAG_SUCCESS);
                     newversion = json.getString("newversion");
                     data = json.getString("data");

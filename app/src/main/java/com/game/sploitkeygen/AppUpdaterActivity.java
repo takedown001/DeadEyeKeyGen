@@ -13,8 +13,6 @@ import com.google.android.gms.ads.AdRequest;
 public class AppUpdaterActivity extends AppCompatActivity {
 
     //app
-    private static final String TAG_APPNAME = "name";
-    private static final String TAG_APP_OLDVERSION = "oldversion";
     private static final String TAG_APP_NEWVERSION = "newversion";
 
     private TextView forceUpdateNote;
@@ -30,7 +28,6 @@ public class AppUpdaterActivity extends AppCompatActivity {
 
     public AppUpdaterActivity() {
     }
-    AdRequest adRequest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +43,6 @@ public class AppUpdaterActivity extends AppCompatActivity {
         whatsNew.setText(whatsNewData);
 
 
-        adRequest = new AdRequest.Builder().build();
         update.setOnClickListener(v -> {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(updateurl));
             startActivity(browserIntent);

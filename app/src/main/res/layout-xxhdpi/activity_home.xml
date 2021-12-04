@@ -11,7 +11,7 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="635dp"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="0dp"
@@ -20,16 +20,13 @@
         android:overScrollMode="never" />
 
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/bottom"
-        android:layout_width="match_parent"
-        android:layout_height="97dp"
-        android:layout_below="@+id/viewPager"
+    <LinearLayout
+        android:id="@+id/bottombanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="0dp"
-        ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-2563787493982341/2572216770" />
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"/>
+
 
 </RelativeLayout>

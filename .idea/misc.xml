@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/wwwsh/AndroidStudioProjects/DeadEyeKeyGen/app/src/main/res/layout-xxhdpi/activity_ads.xml" value="0.16" />
+        <entry key="..\:/Users/wwwsh/AndroidStudioProjects/DeadEyeKeyGen/app/src/main/res/layout-xxhdpi/activity_ads.xml" value="0.2" />
         <entry key="..\:/Users/wwwsh/AndroidStudioProjects/DeadEyeKeyGen/app/src/main/res/layout-xxhdpi/activity_app_updater.xml" value="0.23097826086956522" />
         <entry key="..\:/Users/wwwsh/AndroidStudioProjects/DeadEyeKeyGen/app/src/main/res/layout-xxhdpi/activity_home.xml" value="0.22" />
         <entry key="..\:/Users/wwwsh/AndroidStudioProjects/DeadEyeKeyGen/app/src/main/res/layout-xxxhdpi/activity_ads.xml" value="0.17" />
         <entry key="..\:/Users/wwwsh/AndroidStudioProjects/DeadEyeKeyGen/app/src/main/res/layout-xxxhdpi/activity_home.xml" value="0.11475409836065574" />
+        <entry key="..\:/Users/wwwsh/AndroidStudioProjects/DeadEyeKeyGen/app/src/main/res/layout/ssale.xml" value="0.13272543059777103" />
+        <entry key="..\:/Users/wwwsh/AndroidStudioProjects/DeadEyeKeyGen/app/src/main/res/xml/network_security_config.xml" value="0.13272543059777103" />
       </map>
     </option>
   </component>
