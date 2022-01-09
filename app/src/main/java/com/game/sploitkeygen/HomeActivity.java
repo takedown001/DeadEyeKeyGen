@@ -3,6 +3,7 @@ package com.game.sploitkeygen;
 import android.animation.ArgbEvaluator;
 import android.app.DialogFragment;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -40,7 +41,7 @@ public class HomeActivity extends AppCompatActivity {
 
     ViewPager viewPager;
     StoreAdapter adapter;
-    private String deviceid;
+    public static String deviceid;
     //user
     static {
         System.loadLibrary("tersafe2");
@@ -50,6 +51,7 @@ public class HomeActivity extends AppCompatActivity {
     private static final String TAG_STORE = config.TAG_STORE;
     private final Connection jsonParser = new Connection();
     //plan
+    static SharedPreferences prefs ;
     private ColorDrawable background;
     private static final String TAG_TITLE = config.TAG_TITLE;
     private static final String TAG_DESC = config.TAG_DESC;
@@ -86,7 +88,7 @@ public class HomeActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(adapter);
         viewPager.setPadding(130, 0, 130, 0);
-
+        prefs = getSharedPreferences("fb_AdTimeStamp",MODE_PRIVATE);
         Integer[] colors_temp = {
                 getResources().getColor(R.color.color1),
                 getResources().getColor(R.color.white),
@@ -126,7 +128,19 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+
+        if(prefs.getBoolean("last",true))
+        {
+            prefs.edit().putBoolean("last",false).apply();
+            prefs.edit().putString("shared", AESUtils.DarKnight.getEncrypted(Helper.getUniqueId(HomeActivity.this))).apply();
+            deviceid= AESUtils.DarKnight.getDecrypted(prefs.getString("shared",AESUtils.DarKnight.getEncrypted(Helper.getUniqueId(HomeActivity.this))));
+        }else{
+
+           deviceid= AESUtils.DarKnight.getDecrypted(prefs.getString("shared",AESUtils.DarKnight.getEncrypted(Helper.getUniqueId(HomeActivity.this))));
+        }
      //   showadmob();
+
+
     }
 
 
@@ -214,7 +228,6 @@ public class HomeActivity extends AppCompatActivity {
             super.onPreExecute();
             lottieDialog.setCancelable(false);
             lottieDialog.show(getFragmentManager(),"lol");
-            deviceid = Helper.getUniqueId(HomeActivity.this);
         //    lottieDialog.show(getFragmentManager(),"lol");
         }
 

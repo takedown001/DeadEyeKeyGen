@@ -1,6 +1,7 @@
  package com.game.sploitkeygen;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -43,9 +44,17 @@ import com.google.android.gms.ads.rewardedinterstitial.RewardedInterstitialAdLoa
 
 import org.json.JSONObject;
 
+import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
+import static com.game.sploitkeygen.HomeActivity.deviceid;
 import static com.game.sploitkeygen.config.Phome;
 import static com.game.sploitkeygen.config.TAG_DEVICEID;
 import static com.game.sploitkeygen.config.TAG_KEY;
@@ -86,7 +95,7 @@ import static com.game.sploitkeygen.config.TAG_KEY;
                 long sec = (millisUntilFinished / 1000);
                 NumberFormat f = new DecimalFormat("00");
                 couter.setText(f.format(sec));
-                if(sec == 15){
+                if(sec == 25){
                    loadinter();
                 }
                 if(sec == 8) {
@@ -115,6 +124,7 @@ import static com.game.sploitkeygen.config.TAG_KEY;
                 startActivity(i);
             }
         });
+
          Copy.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
@@ -127,9 +137,21 @@ import static com.game.sploitkeygen.config.TAG_KEY;
              }
          });
         showadmob();
+     }
 
+    public String time () throws ParseException {
+
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm");
+        String time1 = "23:59";
+        String currentTime = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date());
+        Date date1 = format.parse(time1);
+        Date date2 = format.parse(currentTime);
+        long millis = date1.getTime() - date2.getTime();
+        int hours = (int) (millis / (1000 * 60 * 60));
+        int mins = (int) ((millis / (1000 * 60)) % 60);
+
+       return hours + " Hrs : " + mins+" Min";
     }
-
      private void setClipboard(Context context, String text) {
          if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) {
              android.text.ClipboardManager clipboard = (android.text.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
@@ -272,7 +294,7 @@ import static com.game.sploitkeygen.config.TAG_KEY;
 
 
      private void getkey() {
-         final String  deviceid = Helper.getUniqueId(this);
+
 
          class key extends AsyncTask<Void, Void, String> {
              ProgressDialog dialog = new ProgressDialog(AdsActivity.this);
@@ -338,19 +360,44 @@ import static com.game.sploitkeygen.config.TAG_KEY;
                                              mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
                                                  @Override
                                                  public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+                                                        if(key.equals("0")) {
+                                                            try {
+                                                                new AlertDialog.Builder(AdsActivity.this)
+                                                                        .setTitle("Daily Limit Reached")
+                                                                        .setMessage("Due To Increasing Number Of Users Our Server Are Overloading With Requests So To Counter That We Have Limited Free Key Creation To 3 Per Day.\n" +
+                                                                                "Generate Your Next 3 Keys in "+ time())
+                                                                        .setCancelable(false)
+                                                                        .setPositiveButton("ok", (dialog, which) -> finish()).show();
+                                                            } catch (ParseException e) {
+                                                                e.printStackTrace();
+                                                            }
 
-                                                     couter.setTextSize(15);
-                                                     couter.setText("Copy Your Key ");
-                                                     keyshow.setText(key);;
+                                                        }else {
+                                                            couter.setTextSize(15);
+                                                            couter.setText("Copy Your Key ");
+                                                            keyshow.setText(key);
+                                                        }
                                                  }
                                              });
                                          } else {
-                                           //  Log.d("TAG", "The Rewarded ad wasn't ready yet.");
-                                             couter.setTextSize(15);
-                                             couter.setText("Copy Your Key ");
-                                             keyshow.setText(key);;
-                                         }
+                                             if(key.equals("0")) {
+                                                 try {
+                                                     new AlertDialog.Builder(AdsActivity.this)
+                                                             .setTitle("Daily Limit Reached")
+                                                             .setMessage("Due To Increasing Number Of Users Our Server Are Overloading With Requests So To Counter That We Have Limited Free Key Creation To 3 Per Day.\n" +
+                                                                     "Generate Your Next 3 Keys in "+ time())
+                                                             .setCancelable(false)
+                                                             .setPositiveButton("ok", (dialog, which) -> finish()).show();
+                                                 } catch (ParseException e) {
+                                                     e.printStackTrace();
+                                                 }
 
+                                             }else {
+                                                 couter.setTextSize(15);
+                                                 couter.setText("Copy Your Key ");
+                                                 keyshow.setText(key);
+                                             }
+                                         }
                                      }
                                  } catch (Exception e) {
                                      e.printStackTrace();

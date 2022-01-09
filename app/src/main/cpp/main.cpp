@@ -15,16 +15,22 @@ Java_com_game_sploitkeygen_HomeActivity_tg(JNIEnv *env, jclass thiz) {
 extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_game_sploitkeygen_AdsActivity_KeyGen(JNIEnv *env, jobject thiz) {
-    return env->NewStringUTF(OBS("https://gamesploit.com/project/KeyGen/freekey.php"));
+    return env->NewStringUTF(OBS("https://gamesploit.com/project/KeyGen/freekeytest.php"));
 }
 extern "C"
 JNIEXPORT jint JNICALL
 Java_com_game_sploitkeygen_AdsActivity_getduration(JNIEnv *env, jclass clazz) {
-    jint i = 20000;
+    jint i = 30000;
     return i;
 }
 extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_game_sploitkeygen_HomeActivity_Donate(JNIEnv *env, jclass clazz) {
     return env->NewStringUTF(OBS("https://shop.gamesploit.com/product/bgmi-internal-esp/"));
+}
+
+extern "C"
+JNIEXPORT jstring JNICALL
+Java_com_game_sploitkeygen_AESUtils_AES(JNIEnv *env, jclass clazz) {
+    return env->NewStringUTF(OBS("tAeKpEcDe6410111"));
 }

@@ -90,7 +90,7 @@
                 android:layout_marginTop="203dp"
                 android:layout_marginEnd="111dp"
                 android:layout_marginBottom="47dp"
-                android:text="Grab Key" />
+                android:text="Claim Key" />
 
             <TextView
                 android:layout_width="75dp"
@@ -104,7 +104,7 @@
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/montserrat_bold"
                 android:gravity="center"
-                android:text="Free From Ads At Just $1 (7 Days)"
+                android:text="Be Free From Waiting And Ads in Just 0.8$"
                 android:textColor="@color/white"
                 android:textSize="15dp" />
         </RelativeLayout>
